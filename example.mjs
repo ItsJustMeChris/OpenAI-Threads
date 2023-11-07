@@ -1,6 +1,6 @@
 import { OpenAIThread } from "./index.mjs";
 
-const thread = new OpenAIThread("asst_Qpb...");
+const thread = new OpenAIThread("asst_QpbFzJsQVnuSpbVfNWwyhR8c");
 
 thread.registerFunction("get_event_patrons_count_on_date", ({ date }) => {
   console.log(date);
