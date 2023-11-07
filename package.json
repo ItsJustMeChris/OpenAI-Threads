@@ -1,6 +1,6 @@
 {
   "name": "openai-threads",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This library is designed to facilitate the interaction with OpenAI's Assistant API through the concept of a `thread,` which represents a conversation with an OpenAI assistant. ",
   "main": "index.mjs",
   "scripts": {
