@@ -1,6 +1,6 @@
-# openai-threads
+# OpenAI-Threads
 
-openai-threads is a Node.js module designed to interact with OpenAI's Thread API. It provides a simple and intuitive interface for creating and managing conversation threads with OpenAI's AI assistants. This module allows you to create threads, send messages, run threads, handle tool functions, and monitor the status of thread runs.
+OpenAI-Threads is a Node.js module designed to interact with OpenAI's Thread API. It provides a simple and intuitive interface for creating and managing conversation threads with OpenAI's AI assistants. This module allows you to create threads, send messages, run threads, handle tool functions, and monitor the status of thread runs.
 
 ## Features
 
@@ -96,7 +96,7 @@ For more detailed information about the methods and their parameters, please ref
 
 ## Examples
 
-You can find an example script on how to use openai-threads in the `examples` directory.
+You can find an example script on how to use OpenAI-Threads in the `examples` directory.
 
 ## Contributing
 
