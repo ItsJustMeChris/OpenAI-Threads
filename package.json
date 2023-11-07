@@ -1,0 +1,15 @@
+{
+  "name": "OpenAI-Threads",
+  "version": "1.0.0",
+  "description": "This library is designed to facilitate the interaction with OpenAI's Assistant API through the concept of a `thread,` which represents a conversation with an OpenAI assistant. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ItsJustMeChris",
+  "website": "https://chris.tech",
+  "license": "MIT",
+  "dependencies": {
+    "openai": "^4.15.4"
+  }
+}
