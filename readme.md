@@ -90,6 +90,30 @@ Run the thread with specific instructions.
 await thread.runThread("Your instructions for the AI.");
 ```
 
+### Run the Thread, waiting for polling to decide completion or failure
+
+Run the thread with specific instructions.
+
+```js
+await thread.runThreadAndWait("Your instructions for the AI.");
+```
+
+### Get the Latest Response
+
+Retrieve the most recent response from the thread.
+
+```js
+const response = await thread.getResponse();
+```
+
+### Get All Messages
+
+Fetch all messages from the thread.
+
+```js
+const messages = await thread.getMessages();
+```
+
 ## Documentation
 
 For more detailed information about the methods and their parameters, please refer to the [OpenAI API documentation](https://beta.openai.com/docs/).

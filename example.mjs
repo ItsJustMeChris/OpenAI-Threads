@@ -46,7 +46,21 @@ await thread.createThread();
 await thread.createUserMessage(
   "How many users were at the event on 2023-10-10."
 );
-await thread.runThread("Help the user.");
+await thread.runThreadAndWait();
+
+await thread.getResponse();
+
+await thread.createUserMessage(
+  "How many users were at the event on 2024-10-10."
+);
+await thread.runThreadAndWait();
+
+await thread.getResponse();
+
+await thread.createUserMessage("How many users is that in total?.");
+await thread.runThreadAndWait();
+
+await thread.getResponse();
 
 /*
 

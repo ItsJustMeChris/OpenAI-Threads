@@ -37,7 +37,7 @@ export class OpenAIThread {
     }
   }
 
-  async runThread(instructions) {
+  async runThread(instructions = "") {
     try {
       const run = await openai.beta.threads.runs.create(this.thread.id, {
         assistant_id: this.assistant_id,
@@ -49,6 +49,30 @@ export class OpenAIThread {
       await this.pollRun();
 
       this.interval = setInterval(() => this.pollRunInterval(), 1000);
+
+      return run;
+    } catch (error) {
+      console.error("Error running thread:", error);
+      throw error;
+    }
+  }
+
+  async runThreadAndWait(instructions = "") {
+    try {
+      const run = await openai.beta.threads.runs.create(this.thread.id, {
+        assistant_id: this.assistant_id,
+        instructions,
+      });
+
+      this.run = run;
+
+      await this.pollRun();
+
+      this.interval = setInterval(() => this.pollRunInterval(), 1000);
+
+      while (this.interval !== null) {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      }
 
       return run;
     } catch (error) {
@@ -77,6 +101,28 @@ export class OpenAIThread {
 
   registerFunction(functionName, callback) {
     this.functions[functionName] = callback;
+  }
+
+  async getResponse() {
+    try {
+      const messages = await openai.beta.threads.messages.list(this.thread.id);
+
+      return messages.data[0];
+    } catch (error) {
+      console.error("Error getting response:", error);
+      throw error;
+    }
+  }
+
+  async getMessages() {
+    try {
+      const messages = await openai.beta.threads.messages.list(this.thread.id);
+
+      return messages.data;
+    } catch (error) {
+      console.error("Error getting messages:", error);
+      throw error;
+    }
   }
 
   async pollRun() {
