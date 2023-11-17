@@ -11,5 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "openai": "^4.15.4"
-  }
+  },
+  "repository": "github:ItsJustMeChris/OpenAI-Threads",
 }
